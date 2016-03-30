@@ -1,3 +1,3 @@
 <?php 
-echo "Welcome. Hello you to Heroku and GitHub" ;
+echo "Welcome to Heroku and GitHub" ;
 ?>
