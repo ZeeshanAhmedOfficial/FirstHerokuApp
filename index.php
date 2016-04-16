@@ -1,5 +1,5 @@
-<?php
-/*    require_once("_assets/config/dbc.php");
+
+    require_once("_assets/config/dbc.php");
   if(isset($_POST['is_submit']) && $_POST['is_submit'] == 1)
   {
     $create_date = $_POST['inputDate'];
@@ -38,9 +38,7 @@
         echo $errors;
     }  
   }
-*/
 
-?>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
