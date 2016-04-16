@@ -1,7 +1,3 @@
-<?php 
-echo "Welcome to Heroku and GitHub" ;
-echo "Why man why !!!"
-?>
 <?php
     require_once("_assets/config/dbc.php");
   if(isset($_POST['is_submit']) && $_POST['is_submit'] == 1)
