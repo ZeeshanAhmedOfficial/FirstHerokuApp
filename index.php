@@ -225,7 +225,7 @@ $page = isset($_GET['p']) ? $_GET['p'] : '1';
               <form name="formView" id="formView" method="post">
                 <input type="hidden" name="is_submit" value="1" />
                 <input type="hidden" name="act" id="act" value="">
-                <?php
+                
                  require_once("_assets/config/dbc.php");
                   $count_pages = mysql_query("SELECT brand_id FROM itl0_brand");
                   $total_rows = mysql_num_rows($count_pages);
@@ -234,7 +234,7 @@ $page = isset($_GET['p']) ? $_GET['p'] : '1';
                 $countrows = mysql_num_rows($getAllBrands);
                 if ($countrows > 0) {
                   
-                ?>
+                
                 <table cellspacing="1" class="managelist">
                   
 
@@ -250,68 +250,69 @@ $page = isset($_GET['p']) ? $_GET['p'] : '1';
                     </tr>
                   </thead>
           <tbody class="itemsTbody">
-              <?php 
+              
+              
               while ($viewAllBrands = mysql_fetch_array($getAllBrands)) {
-              ?>
+              
                                   
               <tr class="row0">
 
-              <td style="text-align: center;"><?php  echo ++$offset; ?></td>
+              <td style="text-align: center;">php  echo ++$offset; </td>
 
               <td style="text-align: center;">
-              <input class="checkboxesParamId" id="chkParamId[]" type="checkbox" name="chkParamId[]" value="<?php echo $viewAllBrands['brand_id']; ?>" />
+              <input class="checkboxesParamId" id="chkParamId[]" type="checkbox" name="chkParamId[]" value="php echo $viewAllBrands['brand_id']; " />
               </td>
 
               <td class="item-rows">
-              <a href="edit_brand.php?b_id=<?php echo $viewAllBrands['brand_id']; ?>"><strong><?php echo $viewAllBrands['title']; ?></strong></a>
+              <a href="edit_brand.php?b_id=php echo $viewAllBrands['brand_id']; "><strong>php echo $viewAllBrands['title']; </strong></a>
               <div class="row-action">
               <span class="trash">
-              <a class="singleDelete" href="delete_brand.php?b_id=<?php echo $viewAllBrands['brand_id']; ?>"><i class="ic-48-trash"></i> Trash</a>
+              <a class="singleDelete" href="delete_brand.php?b_id=php echo $viewAllBrands['brand_id']; ?>"><i class="ic-48-trash"></i> Trash</a>
               </span>
               </div>
               </td>
 
               
               </td>
-              <td style="text-align: center;"><img src="../uploads/<?php echo $viewAllBrands['brand_img']; ?>" width="50" height = "50" > </td>
+              <td style="text-align: center;"><img src="../uploads/php echo $viewAllBrands['brand_img']; " width="50" height = "50" > </td>
               <td style="text-align: center">
-              <a class = "linkStatus" href="status_brand.php?b_id=<?php echo $viewAllBrands['brand_id']; ?>"> <?php echo ($viewAllBrands['brand_status'] == 'Deactive') ? "<img src='_assets/img/publish_x.png'>" : "<img src='_assets/img/publish_g.png'>" ?></a></td>
-              <td style="text-align: center"><?php echo $viewAllBrands['create_date']; ?></td>
-              <td style="text-align: center;"><?php echo $viewAllBrands['brand_id']; ?></td>
+              <a class = "linkStatus" href="status_brand.php?b_id=php echo $viewAllBrands['brand_id']; "> php echo ($viewAllBrands['brand_status'] == 'Deactive') ? "<img src='_assets/img/publish_x.png'>" : "<img src='_assets/img/publish_g.png'>" </a></td>
+              <td style="text-align: center">php echo $viewAllBrands['create_date']; </td>
+              <td style="text-align: center;">php echo $viewAllBrands['brand_id']; </td>
               </tr>
-              <?php } ?>
+              php } 
               </tbody>
               </table>
                 <div class="pagination pagination-centered pagination-small">
 
                 <ul class="pagination">
                 
-                <?php if($page > 1) : ?>
-                <li><a href="/itechlaptop/admin/view_brand.php?p=<?php  echo ($page-1); ?>">Perv</a></li>
+                php if($page > 1) : ?>
+                <li><a href="/itechlaptop/admin/view_brand.php?p=php  echo ($page-1); ?>">Perv</a></li>
                 <?php endif ?>
                 
                 
-                <?php for ($i = 1; $i <= $end; $i++) : ?>
-                <?php if ($i == $page) : ?>
-                <li class="active"><a href="#"><?php echo $i; ?></a></li>
-                <?php else : ?>
-                <li><a  href="/itechlaptop/admin/view_brand.php?p=<?php  echo $i; ?>"><?php echo $i; ?></a></li>
-                <?php endif; ?>
-                <?php endfor; ?>
+                php for ($i = 1; $i <= $end; $i++) : ?>
+                php if ($i == $page) : ?>
+                <li class="active"><a href="#">php echo $i; ?></a></li>
+                php else : ?>
+                <li><a  href="/itechlaptop/admin/view_brand.php?p=php  echo $i; ?>"><?php echo $i; </a></li>
+                php endif; ?>
+                php endfor; ?>
               
               
-              <?php if($page < $end) : ?>
-              <li><a href="/itechlaptop/admin/view_brand.php?p=<?php echo ($page+1); ?>">Next</a></li>
-              <?php endif ?>
+              php if($page < $end) : ?>
+              <li><a href="/itechlaptop/admin/view_brand.php?p=php echo ($page+1);">Next</a></li>
+              php endif ?>
               </ul>
                 </div>
                 <!-- else message -->
-                <?php } else { ?>
+                php } else { 
                 
                 <div class="alert alert-info"> <strong>
                   <div class="centeralign">No record found</div>
                   </strong> </div>
-               <?php } ?>
+               php } 
               </form>
 
               <script>
@@ -578,14 +579,14 @@ $page = isset($_GET['p']) ? $_GET['p'] : '1';
 <title></title>
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width">
-<?php include('_partials/links.php'); ?>
+php include('_partials/links.php'); ?>
 </head>
 <body>
 <div class="container">
   <div class="row">
     <div class="span12">
-                <?php include("_partials/header.php"); ?>
-      <?php include("_partials/menu.php"); ?>
+                php include("_partials/header.php"); ?>
+      php include("_partials/menu.php"); ?>
 
       <div id="main-content" role="main"> 
         
@@ -605,10 +606,10 @@ $page = isset($_GET['p']) ? $_GET['p'] : '1';
         </section>
         <section class="light-box" id="article-container">
           <article id="article-grid" role="main">
-            <form class="form" id="formAdd" name="formAdd" method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" enctype = "multipart/form-data">
+            <form class="form" id="formAdd" name="formAdd" method="post" action="php echo $_SERVER['PHP_SELF']; ?>" enctype = "multipart/form-data">
               <input type="hidden" name="is_submit" id="is_submit" value="1">
-              <input type="hidden" name="b_id" id="b_id" value="<?php echo $b_id; ?>">
-              <input type="hidden" name="imgURL" id="imgURL" value="<?php echo $viewBrand['brand_img']; ?>">
+              <input type="hidden" name="b_id" id="b_id" value="php echo $b_id; ?>">
+              <input type="hidden" name="imgURL" id="imgURL" value="php echo $viewBrand['brand_img']; ?>">
               <div>
               <div class="row">
               <div class="span6">
@@ -616,15 +617,15 @@ $page = isset($_GET['p']) ? $_GET['p'] : '1';
                   <legend>Primary Detail</legend>
                   <div class="control-group">
                     <label for="inputDate"><strong>Date <span style="color:red; font-size:16px; font-weight:bold;">*</span></strong></label>
-                    <input type="text" id="inputDate" name="inputDate" placeholder="Date" class="input-xlarge" value="<?php echo $viewBrand['create_date']; ?>">
+                    <input type="text" id="inputDate" name="inputDate" placeholder="Date" class="input-xlarge" value="php echo $viewBrand['create_date']; ?>">
                   </div>
                   <div class="control-group">
                     <label for="inputTitle"><strong>Title <span style="color:red; font-size:16px; font-weight:bold;">*</span></strong></label>
-                    <input type="text" id="inputTitle" name="inputTitle" placeholder="Title" class="input-xlarge" value="<?php echo $viewBrand['title']; ?>">
+                    <input type="text" id="inputTitle" name="inputTitle" placeholder="Title" class="input-xlarge" value="php echo $viewBrand['title']; ?>">
                   </div>
                   <div class="control-group">
                     <label for="inputSlug"><strong>Slug <span style="color:red; font-size:16px; font-weight:bold;">*</span></strong></label>
-                    <input type="text" id="inputSlug" name="inputSlug" placeholder="Slug" class="input-xlarge" value="<?php echo $viewBrand['slug']; ?>">
+                    <input type="text" id="inputSlug" name="inputSlug" placeholder="Slug" class="input-xlarge" value="php echo $viewBrand['slug']; ?>">
                   </div>
                 </fieldset>
               </div>
@@ -638,11 +639,11 @@ $page = isset($_GET['p']) ? $_GET['p'] : '1';
               
               <div class="control-group">
                 <label for="inputMetaDescription"><strong>Meta Description:</strong></label>
-                <textarea id="inputMetaDescription" name="inputMetaDescription" rows="7" class="span5"><?php echo $viewBrand['description']; ?></textarea>
+                <textarea id="inputMetaDescription" name="inputMetaDescription" rows="7" class="span5">php echo $viewBrand['description']; ?></textarea>
               </div>
               <div class="control-group">
                 <label for="inputKeywords"><strong>Keywords:</strong></label>
-                <input type="text" id="inputKeywords" name="inputKeywords" placeholder="Keywords" class="span5" value="<?php echo $viewBrand['keywords']; ?>">
+                <input type="text" id="inputKeywords" name="inputKeywords" placeholder="Keywords" class="span5" value="php echo $viewBrand['keywords']; ?>">
               </div>
               
             </form>
@@ -859,7 +860,7 @@ if(isset($_POST['is_submit']) && $_POST['is_submit'] == 1)
     <div class="row">
       <div class="span8 offset3" style="margin-top: 20px;">
         
-        <form class="form-horizontal" method="post" id="fromLogin" name="formLogin" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <form class="form-horizontal" method="post" id="fromLogin" name="formLogin" action="php echo $_SERVER['PHP_SELF']; ?>">
         <input type="hidden" name="is_submit" id="is_submit" value="1">
           <div class="control-group">
             <label class="control-label" for="inputUsername">Fullname</label>
