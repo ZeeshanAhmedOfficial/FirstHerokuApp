@@ -1,45 +1,45 @@
-<?php
-//    require_once("_assets/config/dbc.php");
- // if(isset($_POST['is_submit']) && $_POST['is_submit'] == 1)
- // {
-  //  $create_date = $_POST['inputDate'];
-//    $title = $_POST['inputTitle'];
- //   $slug = $_POST['inputSlug'];
-  //  $brand_status = 'Deactive';
-//    $description = $_POST['inputMetaDescription'];
- //   $keywords = $_POST['inputKeyword'];
+<!-- <?php
+    require_once("_assets/config/dbc.php");
+  if(isset($_POST['is_submit']) && $_POST['is_submit'] == 1)
+  {
+    $create_date = $_POST['inputDate'];
+    $title = $_POST['inputTitle'];
+    $slug = $_POST['inputSlug'];
+    $brand_status = 'Deactive';
+    $description = $_POST['inputMetaDescription'];
+    $keywords = $_POST['inputKeyword'];
 
 
-//    if(isset($_FILES['file']))
-  //  {
-    //  $name = uniqid(time());
-//      $file_ext = pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION);
- //     $file_name = $name . "." . $file_ext;
-  //    $file_size = $_FILES['file']['size'];
-//      $file_tmp = $_FILES['file']['tmp_name'];
-//      $file_type = $_FILES['file']['type'];
-//      $errors = NULL;
-//      $extensions = array("jpeg","jpg","giff","png");
+    if(isset($_FILES['file']))
+    {
+      $name = uniqid(time());
+      $file_ext = pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION);
+      $file_name = $name . "." . $file_ext;
+      $file_size = $_FILES['file']['size'];
+      $file_tmp = $_FILES['file']['tmp_name'];
+      $file_type = $_FILES['file']['type'];
+      $errors = NULL;
+      $extensions = array("jpeg","jpg","giff","png");
 
-//      if(in_array($file_ext, $extensions) == false) $errors = "File of Such Extension is not allowed";
-//      if($file_size > 2097152) $errors = 'File size must be less tham 2 MB';
-//      if (empty($errors)==true) 
-//      {
-//          $isuploaded = move_uploaded_file($file_tmp, "../uploads/".$file_name);
-//          if($isuploaded)
-//          {
- //             mysql_query("INSERT INTO itl0_brand(create_date,title,slug,brand_img,brand_status,meta_description,meta_keywords)
- //             VALUES ('$create_date','$title','$slug','$file_name','$brand_status','$description','$keywords')  ");            
- //             header("Location: view_brand.php");       
- //         }
-   //   }
+      if(in_array($file_ext, $extensions) == false) $errors = "File of Such Extension is not allowed";
+      if($file_size > 2097152) $errors = 'File size must be less tham 2 MB';
+      if (empty($errors)==true) 
+      {
+          $isuploaded = move_uploaded_file($file_tmp, "../uploads/".$file_name);
+          if($isuploaded)
+          {
+              mysql_query("INSERT INTO itl0_brand(create_date,title,slug,brand_img,brand_status,meta_description,meta_keywords)
+              VALUES ('$create_date','$title','$slug','$file_name','$brand_status','$description','$keywords')  ");            
+              header("Location: view_brand.php");       
+          }
+      }
 
-//      else 
-//        echo $errors;
-  //  }  
-//  }
-  
+      else 
+        echo $errors;
+    }  
+  }
 ?>
+-->
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -136,20 +136,20 @@
   </div>
 </div>
 <script>
-//  $(document).ready(function(e){
-//    $("#btnSave").click(function(e){
-//    $("#formAdd").submit();
-//  });
- //   //SHow Date//
-  //  $("#inputDate").datepicker();
- //   //Show Slug///
-//    $("#inputTitle").stringToSlug({
-  //      setEvents: 'keyup keydown blur',
-    //    getPut: '#inputSlug',
-//        space: '_'
- //     });
+  $(document).ready(function(e){
+    $("#btnSave").click(function(e){
+    $("#formAdd").submit();
+  });
+    //SHow Date//
+    $("#inputDate").datepicker();
+    //Show Slug//
+    $("#inputTitle").stringToSlug({
+        setEvents: 'keyup keydown blur',
+        getPut: '#inputSlug',
+        space: '_'
+      });
 
- // });
+  });
 </script>
 
 
